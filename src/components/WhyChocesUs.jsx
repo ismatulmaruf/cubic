@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRightIcon } from "@heroicons/react/solid";
+import { PhoneIcon } from "@heroicons/react/solid"; // Import PhoneIcon
 
 const WhyChooseUs = () => {
   return (
@@ -22,15 +22,13 @@ const WhyChooseUs = () => {
         <p className="mb-6 text-lg">BOOK YOUR Consultancy NOW</p>
 
         <div className="flex justify-center items-center py-6">
-          {" "}
-          {/* Added more vertical padding */}
+          {/* Phone number section */}
           <a
             href={`tel:01965989192`}
-            className="text-white text-3xl flex items-center"
+            className="flex items-center text-white text-3xl"
           >
-            <h3 className="text-2xl font-semibold mr-3">01965989192</h3>
-            <ArrowRightIcon className="h-6 w-6 ml-2" />{" "}
-            {/* Using ArrowRightIcon */}
+            <PhoneIcon className="h-8 w-8 mr-3 text-white" /> {/* Phone icon */}
+            <span className="text-4xl font-semibold  pb-1">01965989192</span>
           </a>
         </div>
       </div>

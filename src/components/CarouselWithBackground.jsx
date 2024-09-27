@@ -60,13 +60,13 @@ const CarouselWithBackground = () => {
           >
             <div className="absolute inset-0 bg-black opacity-50" />{" "}
             {/* Optional overlay for better text visibility */}
-            <div className="relative z-10 text-center px-12">
+            <div className="relative z-10 text-center px-4 md:px-12 py-8">
               {" "}
               {/* Relative z-index for stacking context */}
-              <h2 className="text-white text-3xl md:text-4xl font-bold mb-2">
+              <h2 className="text-white text-2xl md:text-4xl font-bold mb-4">
                 {slide.content}
               </h2>
-              <p className="text-white text-lg md:text-xl">
+              <p className="text-white text-base md:text-lg">
                 {slide.subcontent}
               </p>
             </div>

@@ -91,35 +91,41 @@ const BlogSection = () => {
 
   return (
     <div
-      className="p-12 lg:p-16"
+      className="p-6 md:p-8 lg:p-12 lg:pb-16"
       style={{
         background:
           "linear-gradient(90deg, rgba(6,147,227,0.5) 23%, rgba(155,81,224,0.5) 90%)",
       }}
     >
       {/* Section Heading and Subheading */}
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-white mb-4">
+      <div className="text-center mb-8 md:mb-10 lg:mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-2 md:mb-4">
           Latest From Cubic Overseas Blog
         </h2>
-        <p className="text-lg text-white">Read and learn about tourism</p>
+        <p className="text-base md:text-lg text-white">
+          Read and learn about tourism
+        </p>
       </div>
 
       {/* Blog Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {blogs.map((blog) => (
           <div
             key={blog.id}
-            className="bg-white rounded-lg overflow-hidden shadow-lg"
+            className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-200 hover:scale-105"
           >
             <img
               src={blog.image}
               alt={`Blog ${blog.id}`}
-              className="w-full h-40 object-cover"
+              className="w-full h-40 md:h-48 lg:h-56 object-cover"
             />
-            <div className="p-6">
-              <p className="text-gray-600 text-sm mb-2">{blog.date}</p>
-              <h3 className="text-xl font-semibold mb-4">{blog.title}</h3>
+            <div className="p-4 md:p-6">
+              <p className="text-gray-600 text-xs md:text-sm mb-2">
+                {blog.date}
+              </p>
+              <h3 className="text-lg md:text-xl font-semibold mb-3">
+                {blog.title}
+              </h3>
             </div>
           </div>
         ))}
