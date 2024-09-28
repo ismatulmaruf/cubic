@@ -5,7 +5,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white border-gray-200">
+    <nav className="bg-white bg-opacity-70 backdrop-blur-md border-gray-200 fixed top-0 left-0 w-full z-50">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link
           to="/"
@@ -46,7 +46,7 @@ const Navbar = () => {
           } w-full lg:flex lg:w-auto`}
           id="navbar-dropdown"
         >
-          <ul className="flex flex-col font-medium p-4 lg:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 lg:bg-white items-center">
+          <ul className="flex flex-col font-medium p-4 lg:p-0 mt-4 border border-gray-100 rounded-lg  lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0  items-center">
             <li>
               <Link
                 to="/"
@@ -86,7 +86,7 @@ const Navbar = () => {
 
               {/* Dropdown menu with hover (absolute) */}
               <div
-                className="hidden group-hover:block absolute z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44"
+                className="hidden group-hover:block absolute z-10 font-normal  divide-y divide-gray-100 rounded-lg shadow w-44"
                 id="dropdownNavbar"
               >
                 <ul className="py-2 text-sm text-gray-700">

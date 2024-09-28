@@ -46,7 +46,7 @@ const CarouselWithBackground = () => {
       {slides.map((slide) => (
         <SwiperSlide
           key={slide.id}
-          className="relative flex flex-col items-center justify-center h-[60vh] md:h-[100vh]"
+          className="relative flex flex-col items-center justify-center min-h-[60vh] md:min-h-[100vh]"
           style={{
             backgroundImage: `url(${slide.bgImage})`, // Ensure proper URL syntax
             backgroundSize: "cover",
