@@ -66,7 +66,7 @@ const CarouselWithBackground = () => {
               <h2 className="text-white text-2xl md:text-4xl font-bold mb-4">
                 {slide.content}
               </h2>
-              <p className="text-white text-base md:text-lg">
+              <p className="text-white text-base md:text-lg hidden md:block">
                 {slide.subcontent}
               </p>
             </div>
