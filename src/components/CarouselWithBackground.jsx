@@ -38,7 +38,7 @@ const CarouselWithBackground = () => {
       modules={[Navigation, Pagination, Autoplay]} // Add Autoplay module here
       navigation
       pagination={{ clickable: true }}
-      spaceBetween={30}
+      spaceBetween={0}
       slidesPerView={1}
       autoplay={{ delay: 3000, disableOnInteraction: false }} // Autoplay settings
       className=""
@@ -46,7 +46,7 @@ const CarouselWithBackground = () => {
       {slides.map((slide) => (
         <SwiperSlide
           key={slide.id}
-          className="relative flex flex-col items-center justify-center min-h-screen"
+          className="relative flex flex-col items-center justify-center h-[60vh] md:h-[100vh]"
           style={{
             backgroundImage: `url(${slide.bgImage})`, // Ensure proper URL syntax
             backgroundSize: "cover",
