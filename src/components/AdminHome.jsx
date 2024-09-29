@@ -42,7 +42,7 @@ const SlideManager = () => {
     if (editingId) {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_API_URL}//home/${editingId}`,
+          `${import.meta.env.VITE_API_URL}/api/home/${editingId}`,
           {
             method: "PUT",
             headers: { "Content-Type": "application/json" },

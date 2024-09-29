@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const CarouselWithBackground = () => {
   const [slides, setSlides] = useState([
     {
-      id: 1,
+      _id: 1,
       content: "Welcome To Cubic Overseas, A Trusted Travel Agency",
       subcontent:
         "Cubic Overseas is a Professional Travel Agency Platform. Here we will provide you only interesting services, which you will like very much. We’re dedicated to providing you the best of Travel facilities, with a focus on dependability and Visa processing, air ticket, tour packages, itinerary, hotel booking, work permit, student visa etc.",
@@ -24,7 +24,12 @@ const CarouselWithBackground = () => {
           `${import.meta.env.VITE_API_URL}/api/home`
         );
         const data = await response.json();
-        setSlides(data);
+
+        // Filter the data to only include objects where the category is 'slide'
+        const slidesData = data.filter((item) => item.category === "slide");
+
+        console.log(slidesData); // This will only log the items with category 'slide'
+        setSlides(slidesData);
       } catch (error) {
         console.error("Error fetching slides:", error);
       }
@@ -40,12 +45,12 @@ const CarouselWithBackground = () => {
       pagination={{ clickable: true }}
       spaceBetween={0}
       slidesPerView={1}
-      autoplay={{ delay: 3000, disableOnInteraction: false }} // Autoplay settings
+      autoplay={{ delay: 5000, disableOnInteraction: false }} // Autoplay settings
       className=""
     >
       {slides.map((slide) => (
         <SwiperSlide
-          key={slide.id}
+          key={slide._id}
           className="relative flex flex-col items-center justify-center min-h-[60vh] md:min-h-[100vh]"
           style={{
             backgroundImage: `url(${slide.bgImage})`, // Ensure proper URL syntax

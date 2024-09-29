@@ -1,11 +1,15 @@
 // Home.js
-import React from "react";
+import React, { useEffect } from "react";
 import CarouselWithBackground from "../components/CarouselWithBackground"; // Adjust the import path as necessary
 import AfterCoursel from "../components/AfterCoursel"; // Adjust the import path as necessary
 import LatestHome from "../components/LatestHome"; // Adjust the import path as necessary
 import WhyChocesUs from "../components/WhyChocesUs"; // Adjust the import path as necessary
 
 const Home = () => {
+  useEffect(() => {
+    document.title = "Home | Cubic Overseas – Travel and Tour Agent";
+  }, []);
+
   return (
     <>
       <div className="max-w-screen-xl mx-auto px-4">

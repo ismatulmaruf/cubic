@@ -5,7 +5,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white bg-opacity-70 backdrop-blur-md border-gray-200 fixed top-0 left-0 w-full z-50">
+    <nav className="bg-white  bg-opacity-70 backdrop-blur-md border-gray-200 fixed top-0 left-0 w-full z-50">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link
           to="/"

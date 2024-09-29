@@ -10,6 +10,7 @@ const App = () => {
   return (
     <>
       <Navbar />
+      <div className="p-9"></div>
       <ToastContainer />
       <Outlet />
       <Footer />

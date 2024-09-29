@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const AboutPage = () => {
+  // Update the page title when the component is mounted
+  useEffect(() => {
+    document.title = "About | Cubic Overseas – Travel and Tour Agent";
+  }, []);
+
   const leaders = [
     { name: "AL Faysal - Chairman", img: "https://i.imgur.com/d1d90os.jpeg" },
     {

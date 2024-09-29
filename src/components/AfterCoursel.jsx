@@ -8,7 +8,7 @@ const AfterCoursel = () => {
         {/* First Column */}
         <div className="flex flex-col items-start lg:space-y-6 xl:space-y-8">
           <img
-            src="https://i0.wp.com/cubicoverseas.com/wp-content/uploads/2023/10/Saudi-Arabia.jpg?resize=100%2C70&ssl=1"
+            src="https://i.imgur.com/9cQqobX.jpeg"
             alt="Sample Image"
             className="mb-4 w-full"
           />
