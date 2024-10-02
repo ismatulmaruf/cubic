@@ -16,6 +16,7 @@ import LoginScreen from "./screens/LoginScreen.jsx";
 import About from "./screens/About.jsx";
 import Contact from "./screens/Contact.jsx";
 import Umrah from "./screens/Umrah.jsx";
+import Hajj from "./screens/Hajj.jsx";
 import NotFound from "./screens/NotFound.jsx";
 import RegisterScreen from "./screens/RegisterScreen.jsx";
 import ProfileScreen from "./screens/ProfileScreen.jsx";
@@ -29,6 +30,7 @@ const router = createBrowserRouter(
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/packages/umrah" element={<Umrah />} />
+      <Route path="/packages/hajj" element={<Hajj />} />
       <Route path="/register" element={<RegisterScreen />} />
       <Route path="" element={<PrivateRoute />}>
         <Route path="/profile" element={<ProfileScreen />} />

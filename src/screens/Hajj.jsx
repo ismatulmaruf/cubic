@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 
-const Umrah = () => {
+const Hajj = () => {
   // Setting dynamic title
   useEffect(() => {
-    document.title = "Umrah Package | Cubic Overseas – Travel and Tour Agent";
+    document.title = "Hajj Package | Cubic Overseas – Travel and Tour Agent";
   }, []);
 
   return (
@@ -117,4 +117,4 @@ const Umrah = () => {
   );
 };
 
-export default Umrah;
+export default Hajj;

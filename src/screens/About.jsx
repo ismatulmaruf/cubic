@@ -10,7 +10,7 @@ const AboutPage = () => {
     { name: "AL Faysal - Chairman", img: "https://i.imgur.com/d1d90os.jpeg" },
     {
       name: "Md. Mahamud Murshed - Director",
-      img: "https://i.imgur.com/MZlA1Np.jpeg",
+      img: "https://i.imgur.com/96ojvjn.jpeg",
     },
     {
       name: "Md. Humayun Kobir - Director",
@@ -83,8 +83,10 @@ const AboutPage = () => {
                 <img
                   src={leader.img}
                   alt={leader.name}
-                  className="w-full h-64 md:h-80 object-cover"
+                  className="w-full object-cover"
+                  style={{ height: "28rem" }}
                 />
+
                 <div className="p-4">
                   <h3 className="text-lg md:text-xl font-semibold text-gray-800">
                     {leader.name}

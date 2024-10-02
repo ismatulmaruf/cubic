@@ -86,7 +86,7 @@ const Navbar = () => {
 
               {/* Dropdown menu with hover (absolute) */}
               <div
-                className="hidden group-hover:block absolute z-10 font-normal  divide-y divide-gray-100 rounded-lg shadow w-44"
+                className="hidden group-hover:block absolute z-10 font-normal bg-white  divide-y divide-gray-100 rounded-lg shadow w-44"
                 id="dropdownNavbar"
               >
                 <ul className="py-2 text-sm text-gray-700">
