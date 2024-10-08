@@ -22,21 +22,22 @@ const Hajj = () => {
 
           {/* Text over Banner */}
           <h1 className="relative text-5xl font-bold text-white px-6 py-3 rounded">
-            Umrah Package
+            Hajj Package
           </h1>
         </div>
 
         {/* Introduction Paragraph */}
         <p className="mt-8 text-lg leading-relaxed">
-          Umrah packages are travel packages that are specifically designed for
-          Muslims who wish to perform the Umrah pilgrimage. Umrah is a minor
-          pilgrimage to Mecca and Medina that can be performed at any time of
-          the year.
+          Hajj packages are travel packages that are specifically designed for
+          Muslims who wish to perform the Hajj pilgrimage. Hajj is the fifth
+          pillar of Islam and is a mandatory once-in-a-lifetime pilgrimage to
+          Mecca and Medina that must be performed by all able-bodied Muslims who
+          can afford it.
         </p>
 
         {/* Highlighted Heading */}
         <h3 className="mt-8 text-2xl font-semibold text-blue-600">
-          Umrah packages typically include the following services:
+          Hajj packages typically include the following services:
         </h3>
 
         {/* List of Services */}
@@ -50,7 +51,8 @@ const Hajj = () => {
             Ziyarah (religious visits) to important Islamic sites in Mecca and
             Medina
           </li>
-          <li>Assistance from a knowledgeable and experienced Umrah guide</li>
+          <li>Assistance from a knowledgeable and experienced Hajj guide</li>
+          <li>Meals</li>
         </ul>
 
         {/* Background Picture with Text and Overlay */}
@@ -71,17 +73,17 @@ const Hajj = () => {
 
         {/* Additional Information Paragraph */}
         <p className="text-lg leading-relaxed">
-          Umrah packages can vary in price depending on the length of the trip,
+          Hajj packages can vary in price depending on the length of the trip,
           the quality of the accommodation, and the level of service provided.
-          However, most Umrah packages are relatively affordable, making it
-          possible for Muslims from all walks of life to perform the Umrah
+          However, most Hajj packages are relatively affordable, making it
+          possible for Muslims from all walks of life to perform the Hajj
           pilgrimage.
         </p>
 
         {/* Highlighted Background Section */}
         <div className="bg-yellow-100 border-l-4 border-yellow-500 p-6 mt-8 rounded-lg">
           <h4 className="text-xl font-semibold">
-            When choosing an Umrah package, it is important to consider the
+            When choosing a Hajj package, it is important to consider the
             following factors:
           </h4>
         </div>
@@ -89,27 +91,35 @@ const Hajj = () => {
         {/* Factors to Consider */}
         <ul className="list-disc list-inside mt-4 space-y-2 text-lg">
           <li>
-            The duration of the trip: Umrah packages can range in length from 7
-            to 14 days.
+            The duration of the trip: Hajj packages typically range in length
+            from 20 to 30 days. Choose a package that fits your budget and
+            schedule.
           </li>
           <li>
-            The quality of the accommodation: Choose a package with clean,
-            comfortable, and convenient accommodation.
+            The quality of the accommodation: Choose a package that offers
+            clean, comfortable, and convenient accommodation.
           </li>
           <li>
             The level of service provided: Some packages include meals, airport
-            transfers, and assistance with Umrah rituals.
+            transfers, and assistance with Hajj rituals.
           </li>
         </ul>
 
         {/* Final Paragraph */}
         <div className="bg-yellow-100 border-l-4 border-yellow-500 p-6 my-8 rounded-lg">
           <p className="text-lg leading-relaxed">
-            Performing the Umrah is a truly rewarding experience for Muslims. It
-            is an opportunity to cleanse your soul and connect with Allah on a
-            deeper level. If you are considering performing the Umrah
-            pilgrimage, Cubic Overseas encourages you to research Umrah packages
+            Performing the Hajj is a truly life-changing experience for Muslims.
+            It is an opportunity to cleanse your soul, forgive others, and seek
+            Allah's forgiveness. If you are considering performing the Hajj
+            pilgrimage, Cubic Overseas encourages you to research Hajj packages
             and choose one that is right for you.
+          </p>
+          <p className="text-lg leading-relaxed mt-4">
+            Cubic Overseas would also like to add that it is important to choose
+            a Hajj package from a reputable tour operator. There are many
+            fraudulent tour operators that prey on pilgrims and offer packages
+            that do not deliver on their promises. Be sure to do your research
+            and read reviews before choosing a Hajj package.
           </p>
         </div>
       </div>

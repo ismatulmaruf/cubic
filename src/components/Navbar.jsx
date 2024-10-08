@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom"; // Import Link for routing
+import Logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -11,7 +12,7 @@ const Navbar = () => {
           to="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <img src="logo.png" className="h-8" alt="Flowbite Logo" />
+          <img src={Logo} className="h-8" alt="Flowbite Logo" />
         </Link>
 
         {/* Mobile menu button (visible below 1024px width) */}

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Logo from "../assets/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear(); // Get the current year dynamically
@@ -11,11 +12,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center mb-4 space-y-4 md:space-y-0">
           {/* Logo */}
           <div className="flex items-center justify-center md:justify-start">
-            <img
-              src="logo.png"
-              className="h-10 mr-4"
-              alt="Cubic Overseas Logo"
-            />
+            <img src={Logo} className="h-10 mr-4" alt="Cubic Overseas Logo" />
           </div>
 
           {/* Navigation Links */}

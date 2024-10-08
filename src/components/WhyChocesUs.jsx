@@ -1,12 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { PhoneIcon } from "@heroicons/react/solid"; // Import PhoneIcon
 
 const WhyChooseUs = () => {
+  const [slides, setSlides] = useState([]);
+
+  // Fetch the data when the component mounts
+  useEffect(() => {
+    const fetchSlides = async () => {
+      try {
+        const response = await fetch(
+          `${import.meta.env.VITE_API_URL}/api/home`
+        );
+        const data = await response.json();
+
+        // Filter the data to only include objects where the category is 'contact'
+        const slidesData = data.filter((item) => item.category === "contact");
+        setSlides(slidesData);
+      } catch (error) {
+        console.error("Error fetching slides:", error);
+      }
+    };
+
+    fetchSlides();
+  }, []);
+
+  // Get the first slide that matches the 'contact' category
+  const slide = slides[0];
+
   return (
     <div
       className="relative bg-cover bg-center min-h-screen flex flex-col justify-center items-center px-4 lg:px-16 py-12"
       style={{
-        backgroundImage: `url('https://cubicoverseas.com/wp-content/uploads/2023/10/Air-ticket.jpg')`,
+        backgroundImage: `url(${slide?.bgImage})`,
         backgroundSize: "cover", // Ensure the background covers the entire area
       }}
     >
@@ -15,12 +40,13 @@ const WhyChooseUs = () => {
 
       {/* Content */}
       <div className="relative z-10 text-white text-center max-w-3xl p-6">
-        <h2 className="text-4xl lg:text-5xl font-bold mb-6">Why Choose Us!</h2>
-        <p className="mb-6 text-lg lg:text-xl leading-relaxed">
-          We’re working to turn our passion for travel into a booming earner
-          abroad. We hope you enjoy our Travel Agency as much as we enjoy
-          offering services to you.
-        </p>
+        <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+          {slide?.content || "Why Choose Us!"}
+        </h2>
+        {/* <p className="mb-6 text-lg lg:text-xl leading-relaxed">
+          {||
+            "We’re working to turn our passion for travel into a booming earner abroad. We hope you enjoy our Travel Agency as much as we enjoy offering services to you."}
+        </p> */}
         <p className="mb-8 text-lg lg:text-2xl font-semibold">
           BOOK YOUR Consultancy NOW
         </p>
@@ -33,7 +59,7 @@ const WhyChooseUs = () => {
           >
             <PhoneIcon className="h-8 w-8 mr-3 text-white" />
             <span className="text-2xl lg:text-4xl font-semibold">
-              01965989192
+              {slide?.subcontent}
             </span>
           </a>
         </div>

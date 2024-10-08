@@ -17,7 +17,10 @@ import About from "./screens/About.jsx";
 import Contact from "./screens/Contact.jsx";
 import Umrah from "./screens/Umrah.jsx";
 import Hajj from "./screens/Hajj.jsx";
+import Tour from "./screens/Tour.jsx";
+import StudentVisa from "./screens/StudentVisa.jsx";
 import NotFound from "./screens/NotFound.jsx";
+import Started from "./screens/Started.jsx";
 import RegisterScreen from "./screens/RegisterScreen.jsx";
 import ProfileScreen from "./screens/ProfileScreen.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
@@ -31,6 +34,9 @@ const router = createBrowserRouter(
       <Route path="/contact" element={<Contact />} />
       <Route path="/packages/umrah" element={<Umrah />} />
       <Route path="/packages/hajj" element={<Hajj />} />
+      <Route path="/packages/tours" element={<Tour />} />
+      <Route path="/student-visa" element={<StudentVisa />} />
+      <Route path="/get-started" element={<Started />} />
       <Route path="/register" element={<RegisterScreen />} />
       <Route path="" element={<PrivateRoute />}>
         <Route path="/profile" element={<ProfileScreen />} />
