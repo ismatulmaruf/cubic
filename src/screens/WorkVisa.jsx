@@ -2,18 +2,18 @@
 import React, { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 
-const TourPackages = () => {
+const WorkVisa = () => {
   const [umrahPackages, setUmrahPackages] = useState([]);
   const [loading, setLoading] = useState(true); // Loading state
 
   useEffect(() => {
-    document.title = "Tour Packages | Cubic Overseas – Travel and Tour Agent";
+    document.title = "Work Visa | Cubic Overseas – Travel and Tour Agent";
 
     // Fetch Umrah packages from the backend
     const fetchPackages = async () => {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/api/package/670eaea539c372f8bafd5c3d`
+          `${import.meta.env.VITE_API_URL}/api/package/670eb5d639c372f8bafd5c41`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -61,7 +61,7 @@ const TourPackages = () => {
 
         {/* Highlighted Heading */}
         <h3 className="mt-8 text-2xl font-semibold text-blue-600">
-          {umrahPackages.servicesdescriptiontitle}
+          Some common types of work visas
         </h3>
 
         {/* List of Services */}
@@ -95,7 +95,7 @@ const TourPackages = () => {
         {/* Highlighted Background Section */}
         <div className="bg-yellow-100 border-l-4 border-yellow-500 p-6 mt-8 rounded-lg">
           <h4 className="text-xl font-semibold">
-            Popular types of tour packages include:
+            {umrahPackages.servicesdescriptiontitle}
           </h4>
         </div>
 
@@ -117,4 +117,4 @@ const TourPackages = () => {
   );
 };
 
-export default TourPackages;
+export default WorkVisa;

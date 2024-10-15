@@ -17,9 +17,11 @@ import About from "./screens/About.jsx";
 import Contact from "./screens/Contact.jsx";
 import Umrah from "./screens/Umrah.jsx";
 import Hajj from "./screens/Hajj.jsx";
+import WorkVisa from "./screens/WorkVisa.jsx";
 import Tour from "./screens/Tour.jsx";
 import StudentVisa from "./screens/StudentVisa.jsx";
 import NotFound from "./screens/NotFound.jsx";
+import AdminPackage from "./screens/AdminPackage.jsx";
 import Started from "./screens/Started.jsx";
 import RegisterScreen from "./screens/RegisterScreen.jsx";
 import ProfileScreen from "./screens/ProfileScreen.jsx";
@@ -38,8 +40,10 @@ const router = createBrowserRouter(
       <Route path="/student-visa" element={<StudentVisa />} />
       <Route path="/get-started" element={<Started />} />
       <Route path="/register" element={<RegisterScreen />} />
+      <Route path="/work-visa" element={<WorkVisa />} />
       <Route path="" element={<PrivateRoute />}>
         <Route path="/profile" element={<ProfileScreen />} />
+        <Route path="/admin/package" element={<AdminPackage />} />
         <Route path="/admin" element={<AdminScreen />} />
       </Route>
       <Route path="*" element={<NotFound />} />

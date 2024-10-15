@@ -1,10 +1,38 @@
-import React, { useEffect } from "react";
+// export default Umrah;
+import React, { useEffect, useState } from "react";
+import Loading from "../components/Loading";
 
-const StudentVisa = () => {
-  // Setting dynamic title
+const TourPackages = () => {
+  const [umrahPackages, setUmrahPackages] = useState([]);
+  const [loading, setLoading] = useState(true); // Loading state
+
   useEffect(() => {
     document.title = "Student Visa | Cubic Overseas – Travel and Tour Agent";
+
+    // Fetch Umrah packages from the backend
+    const fetchPackages = async () => {
+      try {
+        const response = await fetch(
+          `${import.meta.env.VITE_API_URL}/api/package/670eb0d039c372f8bafd5c3f`
+        );
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setUmrahPackages(data);
+      } catch (error) {
+        console.error("Failed to fetch Umrah packages", error);
+      } finally {
+        setLoading(false); // Set loading to false after fetching
+      }
+    };
+
+    fetchPackages();
   }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="bg-gray-100 text-gray-800 py-8">
@@ -14,7 +42,7 @@ const StudentVisa = () => {
         <div
           className="relative bg-cover bg-center h-96 flex items-center justify-center rounded-lg overflow-hidden w-full"
           style={{
-            backgroundImage: "url('https://i.imgur.com/bIYNgt3.jpeg')",
+            backgroundImage: `url(${umrahPackages.bannerimageUrl})`,
           }}
         >
           {/* Overlay */}
@@ -22,18 +50,13 @@ const StudentVisa = () => {
 
           {/* Text over Banner */}
           <h1 className="relative text-5xl font-bold text-white px-6 py-3 rounded">
-            Student Visa
+            {umrahPackages.title}
           </h1>
         </div>
 
         {/* Introduction Paragraph */}
         <p className="mt-8 text-lg leading-relaxed">
-          A student visa allows foreign nationals to enter and study in another
-          country. These visas are typically granted for the duration of the
-          student’s studies, plus additional time before and after the study
-          period to allow for travel and settling in. Cubic Overseas assists
-          students in processing their student visa applications, providing
-          guidance every step of the way.
+          {umrahPackages.description}
         </p>
 
         {/* Highlighted Heading */}
@@ -41,26 +64,18 @@ const StudentVisa = () => {
           To apply for a student visa, applicants typically need:
         </h3>
 
-        {/* List of Required Documents */}
+        {/* List of Services */}
         <ul className="list-disc list-inside mt-4 space-y-2 text-lg">
-          <li>A completed student visa application form</li>
-          <li>A valid passport</li>
-          <li>
-            A letter of acceptance from a recognized educational institution
-          </li>
-          <li>Proof of financial support for tuition and living expenses</li>
-          <li>Proof of English language proficiency (if required)</li>
-          <li>
-            Additional documents like medical and police clearance certificates
-            may be required depending on the country.
-          </li>
+          {umrahPackages.services.map((service, index) => (
+            <li key={index}>{service}</li>
+          ))}
         </ul>
 
         {/* Background Picture with Text and Overlay */}
         <div
           className="relative bg-cover bg-center h-96 flex items-center justify-center my-12 rounded-lg overflow-hidden w-full"
           style={{
-            backgroundImage: "url('https://i.imgur.com/oZIDc5o.jpeg')",
+            backgroundImage: `url(${umrahPackages.secondimageUrl})`,
           }}
         >
           {/* Overlay */}
@@ -68,52 +83,33 @@ const StudentVisa = () => {
 
           {/* Text over Image */}
           <span className="relative text-3xl font-bold text-white px-6 py-3 rounded">
-            Study Abroad
+            {umrahPackages.secondtitle}
           </span>
         </div>
 
         {/* Additional Information Paragraph */}
         <p className="text-lg leading-relaxed">
-          The requirements for student visas vary by country, but in general,
-          applicants must be accepted into a full-time program at a recognized
-          institution, meet language proficiency standards, and prove financial
-          stability. Starting the process early and ensuring all requirements
-          are met is crucial for a successful application.
+          {umrahPackages.middleparagraph}
         </p>
 
         {/* Highlighted Background Section */}
         <div className="bg-yellow-100 border-l-4 border-yellow-500 p-6 mt-8 rounded-lg">
           <h4 className="text-xl font-semibold">
-            Key tips to improve your chances of getting a student visa:
+            {umrahPackages.servicesdescriptiontitle}
           </h4>
         </div>
 
-        {/* List of Tips */}
+        {/* Factors to Consider */}
         <ul className="list-disc list-inside mt-4 space-y-2 text-lg">
-          <li>Have a strong academic record</li>
-          <li>Be accepted into a reputable educational institution</li>
-          <li>
-            Meet English language proficiency requirements (if applicable)
-          </li>
-          <li>Provide proof of sufficient financial support</li>
-          <li>Develop a clear and concise study plan</li>
+          {umrahPackages.servicesdescription.map((desc, index) => (
+            <li key={index}>{desc}</li>
+          ))}
         </ul>
 
         {/* Final Paragraph */}
         <div className="bg-yellow-100 border-l-4 border-yellow-500 p-6 my-8 rounded-lg">
           <p className="text-lg leading-relaxed">
-            Studying abroad is an incredible opportunity for students to gain
-            international experience, learn about new cultures, and improve
-            language skills. Cubic Overseas is here to support you in navigating
-            the student visa process, ensuring your application is as strong as
-            possible.
-          </p>
-          <p className="text-lg leading-relaxed mt-4">
-            Remember to choose a reputable educational institution and consult
-            with the embassy or consulate of the country where you plan to study
-            to ensure you meet all visa requirements. With careful planning and
-            the right support, your dream of studying abroad can become a
-            reality.
+            {umrahPackages.finalparagraph}
           </p>
         </div>
       </div>
@@ -121,4 +117,4 @@ const StudentVisa = () => {
   );
 };
 
-export default StudentVisa;
+export default TourPackages;
