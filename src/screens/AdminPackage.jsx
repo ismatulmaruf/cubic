@@ -12,7 +12,9 @@ const AdminPackage = () => {
     const fetchPackages = async () => {
       try {
         setLoading(true);
-        const response = await fetch("http://localhost:5000/api/package");
+        const response = await fetch(
+          `${import.meta.env.VITE_API_URL}/api/package`
+        );
         const data = await response.json();
         setPackages(data); // Store all packages
         setLoading(false);
@@ -29,7 +31,7 @@ const AdminPackage = () => {
   const fetchPackageDetails = async (packageId) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/package/${packageId}`
+        `${import.meta.env.VITE_API_URL}/api/package/${packageId}`
       );
       const data = await response.json();
       setPack(data); // Set the selected package data
@@ -60,7 +62,7 @@ const AdminPackage = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/package/${selectedPackageId}`,
+        `${import.meta.env.VITE_API_URL}/api/package/${selectedPackageId}`,
         {
           method: "PUT",
           headers: {
