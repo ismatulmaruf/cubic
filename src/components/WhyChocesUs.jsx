@@ -9,13 +9,12 @@ const WhyChooseUs = () => {
     const fetchSlides = async () => {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/api/home`
+          `${import.meta.env.VITE_API_URL}/api/home/contact`
         );
         const data = await response.json();
 
-        // Filter the data to only include objects where the category is 'contact'
-        const slidesData = data.filter((item) => item.category === "contact");
-        setSlides(slidesData);
+        // Update slides state with the fetched data
+        setSlides(data);
       } catch (error) {
         console.error("Error fetching slides:", error);
       }
@@ -24,14 +23,14 @@ const WhyChooseUs = () => {
     fetchSlides();
   }, []);
 
-  // Get the first slide that matches the 'contact' category
+  // Get the first slide
   const slide = slides[0];
 
   return (
     <div
       className="relative bg-cover bg-center min-h-screen flex flex-col justify-center items-center px-4 lg:px-16 py-12"
       style={{
-        backgroundImage: `url(${slide?.bgImage})`,
+        backgroundImage: `url(${slide?.ContactSecImage})`, // Adjust if you want to use a different image
         backgroundSize: "cover", // Ensure the background covers the entire area
       }}
     >
@@ -41,25 +40,22 @@ const WhyChooseUs = () => {
       {/* Content */}
       <div className="relative z-10 text-white text-center max-w-3xl p-6">
         <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-          {slide?.content || "Why Choose Us!"}
+          {slide?.ContactSecHeading || "Why Choose Us!"}
         </h2>
-        {/* <p className="mb-6 text-lg lg:text-xl leading-relaxed">
-          {||
+        <p className="mb-6 text-lg lg:text-xl leading-relaxed">
+          {slide?.ContactSecPara ||
             "We’re working to turn our passion for travel into a booming earner abroad. We hope you enjoy our Travel Agency as much as we enjoy offering services to you."}
-        </p> */}
-        <p className="mb-8 text-lg lg:text-2xl font-semibold">
-          BOOK YOUR Consultancy NOW
         </p>
 
         {/* Phone number section */}
         <div className="flex justify-center items-center space-x-4 py-6">
           <a
-            href="tel:01965989192"
+            href={`tel:${slide?.ContactSecNumber}`}
             className="flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300"
           >
             <PhoneIcon className="h-8 w-8 mr-3 text-white" />
             <span className="text-2xl lg:text-4xl font-semibold">
-              {slide?.subcontent}
+              {slide?.ContactSecNumber}
             </span>
           </a>
         </div>

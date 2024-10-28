@@ -1,43 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css"; // Import Swiper styles
 import { Navigation, Pagination, Autoplay } from "swiper/modules"; // Import modules
 import { Link } from "react-router-dom";
 
-const CarouselWithBackground = () => {
-  const [slides, setSlides] = useState([
-    {
-      _id: 1,
-      content: "Welcome To Cubic Overseas, A Trusted Travel Agency",
-      subcontent:
-        "Cubic Overseas is a Professional Travel Agency Platform. Here we will provide you only interesting services, which you will like very much. We’re dedicated to providing you the best of Travel facilities, with a focus on dependability and Visa processing, air ticket, tour packages, itinerary, hotel booking, work permit, student visa etc.",
-      bgImage: "https://cubicoverseas.com/wp-content/uploads/2023/10/NY.jpeg",
-      link: "about",
-    },
-  ]);
-
-  // Fetch slides from backend
-  useEffect(() => {
-    const fetchSlides = async () => {
-      try {
-        const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/api/home`
-        );
-        const data = await response.json();
-
-        // Filter the data to only include objects where the category is 'slide'
-        const slidesData = data.filter((item) => item.category === "slide");
-
-        console.log(slidesData); // This will only log the items with category 'slide'
-        setSlides(slidesData);
-      } catch (error) {
-        console.error("Error fetching slides:", error);
-      }
-    };
-
-    fetchSlides();
-  }, []);
-
+const CarouselWithBackground = ({ slides }) => {
   return (
     <Swiper
       modules={[Navigation, Pagination, Autoplay]} // Add Autoplay module here
@@ -66,8 +33,6 @@ const CarouselWithBackground = () => {
             <div className="absolute inset-0 bg-black opacity-50" />{" "}
             {/* Optional overlay for better text visibility */}
             <div className="relative z-10 text-center px-4 md:px-12 py-8">
-              {" "}
-              {/* Relative z-index for stacking context */}
               <h2 className="text-white text-2xl md:text-4xl font-bold mb-4">
                 {slide.content}
               </h2>

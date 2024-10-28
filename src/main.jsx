@@ -26,6 +26,9 @@ import Started from "./screens/Started.jsx";
 import RegisterScreen from "./screens/RegisterScreen.jsx";
 import ProfileScreen from "./screens/ProfileScreen.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
+import Bloglist from "./screens/Bloglist.jsx";
+import CreateBlog from "./screens/CreateBlog.jsx";
+import EditBlog from "./screens/EditBlog.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -45,6 +48,9 @@ const router = createBrowserRouter(
         <Route path="/profile" element={<ProfileScreen />} />
         <Route path="/admin/package" element={<AdminPackage />} />
         <Route path="/admin" element={<AdminScreen />} />
+        <Route path="/admin/blog" element={<Bloglist />} />
+        <Route path="/admin/blog/create" element={<CreateBlog />} />
+        <Route path="/admin/blog/edit/:id" element={<EditBlog />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Route>
