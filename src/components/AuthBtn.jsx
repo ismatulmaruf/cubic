@@ -20,14 +20,29 @@ const Hero = () => {
 
   return (
     <div className="px-10">
-      <div className="flex justify-end">
-        <div className="bg-light rounded-lg  flex  items-end">
+      <div className="flex justify-center">
+        <div className="bg-light rounded-lg  flex  items-center">
           <div className="flex">
             {userInfo ? (
               <>
-                <Link to="/profile">
+                {/* <Link to="/profile">
                   <button className="bg-green-500 text-white px-6 py-2 rounded-md mr-3 hover:bg-green-600">
                     Profile
+                  </button>
+                </Link> */}
+                <Link to="/admin">
+                  <button className="bg-orange-500 text-white px-6 py-2 rounded-md mr-3 hover:bg-orange-600">
+                    Home
+                  </button>
+                </Link>
+                <Link to="/admin/package">
+                  <button className="bg-green-500 text-white px-6 py-2 rounded-md mr-3 hover:bg-green-600">
+                    Package
+                  </button>
+                </Link>
+                <Link to="/admin/blog">
+                  <button className="bg-blue-500 text-white px-6 py-2 rounded-md mr-3 hover:bg-blue-600">
+                    Blog
                   </button>
                 </Link>
                 <button

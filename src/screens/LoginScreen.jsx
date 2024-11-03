@@ -87,14 +87,14 @@ const LoginScreen = () => {
 
       {isLoading && <Loader />}
 
-      <div className="py-3">
+      {/* <div className="py-3">
         <p>
           New Customer?{" "}
           <Link to="/register" className="text-blue-600 hover:underline">
             Register
           </Link>
         </p>
-      </div>
+      </div> */}
     </FormContainer>
   );
 };

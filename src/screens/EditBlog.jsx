@@ -8,24 +8,34 @@ const EditBlog = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [title, setTitle] = useState("");
+  const [image, setImage] = useState("");
   const [content, setContent] = useState("");
-  const [author, setAuthor] = useState("");
+  const [type, setType] = useState("");
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/blogs/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
+    const fetchBlog = async () => {
+      try {
+        const response = await fetch(
+          `${import.meta.env.VITE_API_URL}/api/blogs/${id}`
+        );
+        const data = await response.json();
+        console.log(data);
         setTitle(data.title);
         setContent(data.content);
-        setAuthor(data.author);
-      })
-      .catch((error) => console.error("Error fetching blog:", error));
+        setImage(data.image);
+        setType(data.type);
+      } catch (error) {
+        console.error("Error fetching blog:", error);
+      }
+    };
+
+    fetchBlog();
   }, [id]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const updatedBlog = { title, content, author };
+    const updatedBlog = { title, content, type, image };
 
     try {
       const response = await fetch(
@@ -38,7 +48,7 @@ const EditBlog = () => {
       );
       if (response.ok) {
         alert("Blog post updated!");
-        navigate("/");
+        navigate("/admin/blog");
       } else {
         alert("Error updating blog post.");
       }
@@ -64,9 +74,17 @@ const EditBlog = () => {
           />
           <input
             type="text"
-            placeholder="Author"
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
+            placeholder="Image"
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
+            required
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+          />
+          <input
+            type="text"
+            placeholder="Type"
+            value={type}
+            onChange={(e) => setType(e.target.value)}
             required
             className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
           />

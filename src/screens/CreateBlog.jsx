@@ -5,13 +5,14 @@ import { QuillEditorToolbar } from "../components/QuillEditorToolbar";
 
 const CreateBlog = () => {
   const [title, setTitle] = useState("");
+  const [image, setImage] = useState("");
   const [content, setContent] = useState("");
   const [type, setType] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const newBlog = { title, content, type };
+    const newBlog = { title, content, type, image };
 
     try {
       const response = await fetch(
@@ -27,6 +28,7 @@ const CreateBlog = () => {
         setTitle("");
         setContent("");
         setType("");
+        setImage("");
       } else {
         alert("Error creating blog post.");
       }
@@ -52,6 +54,20 @@ const CreateBlog = () => {
             placeholder="Enter the blog title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+            required
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
+        </div>
+        <div>
+          <label className="block text-lg font-semibold mb-2" htmlFor="image">
+            Blog Image
+          </label>
+          <input
+            type="text"
+            id="image"
+            placeholder="Enter the blog image"
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
             required
             className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           />

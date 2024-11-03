@@ -23,12 +23,14 @@ import StudentVisa from "./screens/StudentVisa.jsx";
 import NotFound from "./screens/NotFound.jsx";
 import AdminPackage from "./screens/AdminPackage.jsx";
 import Started from "./screens/Started.jsx";
-import RegisterScreen from "./screens/RegisterScreen.jsx";
-import ProfileScreen from "./screens/ProfileScreen.jsx";
+// import RegisterScreen from "./screens/RegisterScreen.jsx";
+// import ProfileScreen from "./screens/ProfileScreen.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
 import Bloglist from "./screens/Bloglist.jsx";
 import CreateBlog from "./screens/CreateBlog.jsx";
 import EditBlog from "./screens/EditBlog.jsx";
+import AllBlog from "./screens/Allblog.jsx";
+import SingleBlog from "./screens/SingleBlog.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -42,10 +44,12 @@ const router = createBrowserRouter(
       <Route path="/packages/tours" element={<Tour />} />
       <Route path="/student-visa" element={<StudentVisa />} />
       <Route path="/get-started" element={<Started />} />
-      <Route path="/register" element={<RegisterScreen />} />
+      {/* <Route path="/register" element={<RegisterScreen />} /> */}
       <Route path="/work-visa" element={<WorkVisa />} />
+      <Route path="/blog" element={<AllBlog />} />
+      <Route path="/blog/:id" element={<SingleBlog />} />
       <Route path="" element={<PrivateRoute />}>
-        <Route path="/profile" element={<ProfileScreen />} />
+        {/* <Route path="/profile" element={<ProfileScreen />} /> */}
         <Route path="/admin/package" element={<AdminPackage />} />
         <Route path="/admin" element={<AdminScreen />} />
         <Route path="/admin/blog" element={<Bloglist />} />
